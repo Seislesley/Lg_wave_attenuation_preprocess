@@ -1,0 +1,13 @@
+event_input: ../log/events.par
+
+data_dir: ../data/
+resp_dir: ../RESP/
+
+vel_data_dir: ../vel_data/
+
+Process_num: 10
+
+#remove response parameters
+max_percentage: 0.05
+output: VEL
+pre_filt: [0.005,0.01,25,40]

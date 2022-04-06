@@ -1,0 +1,45 @@
+######### The study area ###############
+latitude:
+  min: 39.0
+  max: 56.0
+longitude:
+  min: 73.0
+  max: 107.0
+
+#------------------------------ Step 0 : get events -----------------------------------
+#Client
+client: 
+  event: ISC
+  station: IRIS
+#the output events.par name
+event_output:
+  origin: ../log/events_CA.par
+  sparse: ../log/events.par
+
+######### event paramters ###############
+#time ranges
+origin_time:
+  begin: 1900-01-01T00:00:00
+  end: 2022-03-09T00:00:00
+
+#depth ranges
+depth:
+  min: 0.0
+  max: 100.0
+
+#magnitude ranges
+magnitude:
+  min: 6.0
+  max: 10.0
+
+#the Moho depth file for constrain the intra-crust events
+moho_file: functions/model/depthtomoho.xyz
+
+########## station parameters #################
+#epicenter range (km)
+epicenter:
+  min: 200
+  max: 2000
+
+#min record number
+min_record_num: 3

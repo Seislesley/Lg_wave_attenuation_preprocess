@@ -1,0 +1,8 @@
+event_input: ../log/events_origin.par
+
+station_output: ../log/ap.stats.txt
+vel_data_dir: ../vel_data/
+
+event_output:
+  1: ../log/events_new.par
+  2: ../log/events_new_2.par

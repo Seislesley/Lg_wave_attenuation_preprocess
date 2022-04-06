@@ -1,0 +1,76 @@
+######### The study area ###############
+latitude:
+  min: 40.0
+  max: 60.0
+longitude:
+  min: 20.0
+  max: 45.0
+
+#------------------------------ Step 1 : mass download of waveforms -----------------------------------
+######### Waveform get paramters ##################
+#time windows
+waveform_time:
+  pre_event: 0
+  after_event: 18
+#data and resp storage dir
+data_dir: ../data/
+resp_dir: ../RESP/
+#read in event par
+event_input: ../log/events.par
+#Process number
+Process_num: 1
+#sleep time gap
+sleep_gap: 0
+mass_download_paramters:
+  # You might not want to deal with gaps in the data. If this setting is
+  # True, any trace with a gap/overlap will be discarded.
+  reject_channels_with_gaps: True
+  # And you might only want waveforms that have data for at least 95 % of
+  # the requested time span. Any trace that is shorter than 95 % of the
+  # desired total duration will be discarded.
+  minimum_length: 0.99
+  # No two stations should be closer than 10 km to each other. This is
+  # useful to for example filter out stations that are part of different
+  # networks but at the same physical station. Settings this option to
+  # zero or None will disable that filtering.
+  minimum_interstation_distance_in_m: 10E4
+  # Only HH or BH channels. If a station has HH channels, those will be
+  # downloaded, otherwise the BH. Nothing will be downloaded if it has
+  # neither. You can add more/less patterns if you like.
+  channel_priorities: ["HH[Z]", "BH[Z]"]
+  # Location codes are arbitrary and there is no rule as to which
+  # location is best. Same logic as for the previous setting.
+  location_priorities: ["10", "00", ""]
+  # the client to get the waveforms,  e.g ['IRIS']; if you give: all, will try all
+  # the client that provide
+  # BGR         http://eida.bgr.de
+  # EMSC        http://www.seismicportal.eu
+  # ETH         http://eida.ethz.ch
+  # GEONET      http://service.geonet.org.nz
+  # GFZ         http://geofon.gfz-potsdam.de
+  # ICGC        http://ws.icgc.cat
+  # INGV        http://webservices.ingv.it
+  # IPGP        http://ws.ipgp.fr
+  # IRIS        http://service.iris.edu
+  # ISC         http://isc-mirror.iris.washington.edu
+  # KNMI        http://rdsa.knmi.nl
+  # KOERI       http://eida.koeri.boun.edu.tr
+  # LMU         http://erde.geophysik.uni-muenchen.de
+  # NCEDC       http://service.ncedc.org
+  # NIEP        http://eida-sc3.infp.ro
+  # NOA         http://eida.gein.noa.gr
+  # ODC         http://www.orfeus-eu.org
+  # ORFEUS      http://www.orfeus-eu.org
+  # RASPISHAKE  http://fdsnws.raspberryshakedata.com
+  # RESIF       http://ws.resif.fr
+  # SCEDC       http://service.scedc.caltech.edu
+  # TEXNET      http://rtserve.beg.utexas.edu
+  # UIB-NORSAR  http://eida.geo.uib.no
+  # USGS        http://earthquake.usgs.gov
+  # USP         http://sismo.iag.usp.br 
+  providers: all
+
+
+
+
+
